@@ -2,6 +2,8 @@ import React from 'react';
 import {Card} from 'reactstrap'
 import HandleMMRChange from '../Ressources/HandleMMRChange'
 import ReverseCoting from '../Ressources/reverseCoting'
+import '../1_matchPage/MatchPage.css'
+
 
 const MatchPage = () => {
 
@@ -21,52 +23,51 @@ const MatchPage = () => {
     }
     
     return (  
-        <>
+        <div className="MatchCards">
 
             {Object.values(dataBaseMatch).map(x=>
                 <Card>
-                    <div className="cardCote" >
-                        cote : ___
-                    </div>
-
-                <div className="cardTitle">
-                    
-                    <h3>{x.EquipeDomicile}</h3>
-                    {x.cote}
-                    VS
-                    {ReverseCoting(x.cote)}
-
-                    <h3>{x.EquipeVisiteur}</h3>
-
-
-                </div>
-
-                <div className="effectOnMMR">
-                    <div id="MMRHome">
-                        victoryHome:  {HandleMMRChange('victory', x.cote)}
-                        <br/>
-                        DefeatHome:
-                        {HandleMMRChange('defeat', x.cote)}
+                    <div className="cardBody">
+                        <div className="Team">
+                            <h3>{x.EquipeDomicile}</h3>
+                            {x.cote}
+                            victoryHome:  {HandleMMRChange('victory', x.cote)}
+                            <br/>
+                            DefeatHome:
+                            {HandleMMRChange('defeat', x.cote)}
+                        </div>
                         
+                        <div id="vs">
+                            <h2 >VS</h2>    
+                        </div>
 
-                    </div>
-
-                    <div id="MMRVisitor">
+                        <div className="Team">
+                            <h3>{x.EquipeVisiteur}</h3>
+                            {ReverseCoting(x.cote)}
+                        
                             Visitor Victory: 
-                            {HandleMMRChange('victory', ReverseCoting(x.cote))}
-                                <br/>
-                            visitor Defeat: 
-                        <p> {HandleMMRChange('defeat', ReverseCoting(x.cote))} </p>
+                                {HandleMMRChange('victory', ReverseCoting(x.cote))}
+                                    <br/>
+                            Defeat visitor: 
+                            <p> {HandleMMRChange('defeat', ReverseCoting(x.cote))} </p>
 
-
+                        </div>
                     </div>
-                
-                </div>
+
+                    <div className="effectOnMMR">
+                       
+
+                        <div id="MMRVisitor">
+                                
+
+                        </div>
+                    
+                    </div>
 
                 </Card>
                 
                 )}
-        </>   
+        </div>   
 
 
     );

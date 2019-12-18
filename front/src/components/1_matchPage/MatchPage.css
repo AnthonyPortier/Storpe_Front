@@ -1,0 +1,34 @@
+*{border: solid 1px red}
+
+.MatchCards{
+    display: flex;
+    flex-flow: column;
+    align-items: stretch ;
+    justify-content: center;
+    width:80%;
+
+}
+
+#vs{display: flex;
+    align-items: center;}
+
+.Team{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 40%;
+}
+.MatchCards h3{
+    width:100%;
+    height:100%; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.cardBody{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap !important;
+}
