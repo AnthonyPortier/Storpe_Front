@@ -16,6 +16,7 @@ const Router = () => {
                 <Route exact path ='/profilePage' component={ProfilePage}/>
                 <Route exact path ='/editProfile' component={EditProfile}/>
                 <Route exact path ='/congratulationsPage' component={CongratulationsPage}/>
+                <Route exact path='/registerPage' component={RegisterPage}/>
                 <Route exact path ='/' component={LandingPage}/>           
             </Switch>
         </div>
