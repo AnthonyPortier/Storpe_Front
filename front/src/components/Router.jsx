@@ -3,9 +3,12 @@ import { Switch, Route} from 'react-router-dom'
 import LandingPage from './2_landingPage/LandingPage'
 import MatchPage from './1_matchPage/MatchPage'
 import CongratulationsPage from './6_congratulationsPage/CongratulationsPage'
+<<<<<<< HEAD
 import RegisterPage from './7_registerPage/RegisterPage'
 {/*import ProfilePage from './4_profilePage/ProfilePage'*/}
 {/*import EditProfile from './5_editProfile/EditProfile'*/}
+=======
+>>>>>>> LandingPage
 
 const Router = () => {
     return(
