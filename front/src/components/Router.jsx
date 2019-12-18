@@ -5,8 +5,6 @@ import MatchPage from './1_matchPage/MatchPage'
 import ProfilePage from './4_profilePage/ProfilePage'
 import EditProfile from './5_editProfile/EditProfile'
 import CongratulationsPage from './6_congratulationsPage/CongratulationsPage'
-import RegisterPage from './7_registerPage/RegisterPage'
-
 
 const Router = () => {
     return(
