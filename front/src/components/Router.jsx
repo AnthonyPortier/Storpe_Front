@@ -12,12 +12,12 @@ const Router = () => {
     return(
         <div>
             <Switch>
-                <Route exact path='/' component={LandingPage}/>
+                <Route exact path='/' component={RegisterPage}/>
                 <Route exact path='/matchPage' component={MatchPage}/>
                 <Route exact path ='/profilePage' component={ProfilePage}/>
                 <Route exact path ='/editProfile' component={EditProfile}/>
                 <Route exact path ='/congratulationsPage' component={CongratulationsPage}/>
-                <Route exact path ='/registerPage' component={RegisterPage}/>           
+                <Route exact path ='/landingPage' component={LandingPage}/>           
             </Switch>
         </div>
     )
