@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import { useState } from 'react';
 import {ContextHook} from './components/useContext'
+import Router from './components/Router'
 
 function App() {
-  const [ranking, setranking] = useState(initialState)
+  const [ranking, setRanking] = useState()
     return (
 
 
