@@ -1,0 +1,9 @@
+
+/* ------ Import de la font Hijo ------ */
+@font-face {
+    font-family: 'Hijo';
+    src:
+        local('Hijo'),
+      url('./fonts/Hijo.otf') format('opentype')
+    }
+
