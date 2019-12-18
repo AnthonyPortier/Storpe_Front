@@ -15,7 +15,7 @@ const LandingPage = (props) => {
         </Col>
       </FormGroup>
       <FormGroup row>
-        <Label for="examplePassword" sm={2}>Mot de passe</Label>
+        <Label for="examplePassword" sm={2}>Password</Label>
         <Col sm={10}>
           <Input type="password" name="password" id="examplePassword" placeholder="Mot de passe" />
         </Col>
