@@ -42,7 +42,7 @@ const MatchPage = () => {
             },
             "awayTeam": {
                 "teamName": "Montpellier",
-                "teamLogo": "https://media.api-football.com/teams/79.png"
+                "teamLogo": "https://media.api-football.com/teams/71.png"
             },
             "odds": [
                 {
@@ -165,7 +165,7 @@ const MatchPage = () => {
                 <Card key={x.id}>
                     <div className="cardBody">
                         <div className="Team">
-                            <img alt="" />
+                            <img alt="" src={x.homeTeam.teamLogo}/>
                             <div className="teamHead">
                                 <h3>{x.homeTeam.teamName}</h3>
 
@@ -207,7 +207,7 @@ const MatchPage = () => {
                         </div>
                         
                         <div className="Team">
-                        <img alt="" src=""/>
+                        <img alt="" src={x.awayTeam.teamLogo}/>
 
                             <div className="teamHead">
                                 <h3>{x.awayTeam.teamName}</h3>
