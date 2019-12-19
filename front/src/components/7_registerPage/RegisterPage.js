@@ -12,11 +12,11 @@ const RegisterPage = () => {
 
     return (
         <div className="register-page-main-div">
-            <Form>
+            <Form className="form-background-color">
                 {/* Prénom */}
                 <FormGroup>
-                    <Label for="exampleFirstname">Prénom</Label>
-                    <Input
+                    <Label className="label-firstname" for="exampleFirstname">Prénom</Label>
+                    <Input className="input-firstname"
                         type="text"
                         name="firstname"
                         id="register-input-firstname" 
@@ -24,17 +24,29 @@ const RegisterPage = () => {
                 </FormGroup>
                 {/* Nom */}
                 <FormGroup>
-                    <Label for="exampleLastname">Nom</Label>
-                    <Input
+                    <Label className="label-lastname" for="exampleLastname">Nom</Label>
+                    <Input className="input-lastname"
                         type="text"
                         name="last"
                         id="register-input-last"
                     />
                 </FormGroup>
+                {/* Pseudo--*/}
+                <FormGroup>
+                    <Label className="label-pseudo" for="examplePseudo">Pseudo</Label>
+                    <Input className="input-pseudo"
+                        type="text"
+                        name="pseudo"
+                        id="register-input-pseudo"
+                        placeholder="Tape ton pseudo..."
+                    />
+                </FormGroup>
+                
+                       
                 {/* Email */}
                 <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input
+                    <Label className="label-email" for="exampleEmail">Email</Label>
+                    <Input className="input-email"
                         type="email"
                         name="email"
                         id="exampleEmail"
@@ -43,16 +55,16 @@ const RegisterPage = () => {
                 </FormGroup>
                 {/* Mot de passe */}
                 <FormGroup>
-                    <Label for="examplePassword">Mot de passe</Label>
-                    <Input type="password" name="password" id="register-input-password" placeholder="Rentre ton mot de passe..." />
+                    <Label className="label-password" for="examplePassword">Mot de passe</Label>
+                    <Input className="input-password" type="password" name="password" id="register-input-password" placeholder="Rentre ton mot de passe..." />
                 </FormGroup>
                 {/* Mot de passe confirmé*/}
                 <FormGroup>
-                    <Label for="examplePasswordConfirmed">Confirme ton mot de passe</Label>
-                    <Input type="password" name="password" id="register-input-passwordConfirmed"/>
+                    <Label className="label-confirm-password" for="examplePasswordConfirmed">Confirme ton mot de passe</Label>
+                    <Input className="input-password-confirm" type="password" name="password" id="register-input-passwordConfirmed"/>
                 </FormGroup>
 
-                <Button>Confirmer</Button>
+                <Button className="button-confirm">Confirmer</Button>
 
                 <button class="continueBtn continueBtn--facebook">
                     Continuer avec Facebook
@@ -63,11 +75,12 @@ const RegisterPage = () => {
                 </button>
       
                <div className="register-already-subscribe">
-                   <p>Déja inscrit? <Link to ='/login'><span>S'identifer</span></Link></p>
+                   <p className="text-inscription">Déja inscrit? <Link to ='/login'><span>S'identifer</span></Link></p>
                </div>
-
-              
             </Form>
+                
+                <h1 className="h1-titre">STORPE</h1>
+              
         </div>
 
     );
