@@ -7,3 +7,7 @@
       url('./fonts/Hijo.otf') format('opentype')
     }
 
+
+    html {
+      background-color: #53a7f0;
+    }

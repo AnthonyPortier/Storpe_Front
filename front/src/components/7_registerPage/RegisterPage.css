@@ -46,7 +46,6 @@
   text-shadow: 0 -1px 0 #354C8C;
   display: flex;
   margin: auto;
-  margin-bottom: 1rem;
 }
 .continueBtn--facebook:before {
   border-right: #364e92 1px solid;
@@ -65,7 +64,6 @@
   background: #DD4B39;
   display: flex;
   margin: auto;
-  margin-bottom: 2rem;
 }
 .continueBtn--google:before {
   border-right: #BB3F30 1px solid;
@@ -79,87 +77,45 @@
 
 .register-page-main-div{
   height: 100vh;
+  width: 100%;
   background-color: #53A8F0;
 }
 
-.label-firstname {
-  margin-left: 50%;
-  color: white;
-}
-
-.label-lastname {
-  margin-left: 50%;
-  color: white;
-}
-
-.label-pseudo{
-  margin-left: 50%;
-  color: white;
-}
-
-.label-email {
-  margin-left: 50%;
-  color: white;
-}
-
-.label-password {
-  margin-left: 50%;
-  color: white;
-}
-
-.label-confirm-password {
-  margin-left: 50%;
-  color: white;
-}
-
-.button-confirm {
-  display: flex;
+Form.register-page-form {
   margin: auto;
-  margin-bottom: 1rem;
+  width: 40%;
+  color: white;
+  
 }
+
+button.button-confirm, button.button-confirm:hover{
+    margin:2rem auto;
+    width: 20%;
+    background-color: white;
+    color: #53a7f0;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
 
 .text-inscription {
   text-align: center;
   color: white;
 }
 
-.input-firstname {
-  width: 50%;
-  margin: auto;
-  
-}
-
-.input-lastname {
-  width: 50%;
-  margin: auto;
-}
-
-.input-email {
-  width: 50%;
-  margin: auto;
-}
-
-.input-password {
-  width: 50%;
-  margin: auto;
-}
-
-.input-password-confirm {
-  width: 50%;
-  margin: auto;
-  
-}
-
-.input-pseudo {
-  width: 50%;
-  margin: auto;
-  color: white;
-  
-}
 
 .h1-titre {
   color: white;
   font-size: 9rem;
   text-align: center;
   font-family: 'Hijo';
+  padding: 1rem 0px;
+
+}
+
+div.register-page-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
