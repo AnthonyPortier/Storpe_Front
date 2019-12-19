@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from 'reactstrap'
+import {Card, Button} from 'reactstrap'
 import HandleMMRChange from '../Ressources/HandleMMRChange'
 import ReverseCoting from '../Ressources/reverseCoting'
 import '../1_matchPage/MatchPage.css'
@@ -21,49 +21,72 @@ const MatchPage = () => {
             EquipeDomicile : "Fc2",
             cote : 1.4},
     }
+
+    const equipeImages = [
+        ["Paris-Saint-Germain", "/home/alex/Documents/Hackathon2/storpe/front/src/img/1024px-Paris_Saint-Germain_Logo.svg.png"]
+    ]
     
     return (  
-        <div className="MatchCards">
 
+        <div className="MatchCards">
+{/*         <img alt="" style={{width:"140px"}} src={require(equipeImages[0][1])}/>
+ */}            {equipeImages[0][1]}
             {Object.values(dataBaseMatch).map(x=>
                 <Card>
                     <div className="cardBody">
                         <div className="Team">
-                            <h3>{x.EquipeDomicile}</h3>
-                            {x.cote}
-                            victoryHome:  {HandleMMRChange('victory', x.cote)}
-                            <br/>
-                            DefeatHome:
-                            {HandleMMRChange('defeat', x.cote)}
+                            <div className="teamHead">
+                                <h3>{x.EquipeDomicile}</h3>
+                                {x.cote}
+                            </div>
+
+                            <div className="MMR">
+                                <Button>
+                                    Bet for {x.EquipeDomicile}
+                                </Button>
+                                <div className="points">
+
+                                    <p>+ {HandleMMRChange('victory', x.cote)}</p>
+                                    <p>- {HandleMMRChange('defeat', x.cote)}</p>
+                                </div>
+                                
+
+                                
+                                </div>
+                            
                         </div>
                         
                         <div id="vs">
                             <h2 >VS</h2>    
                         </div>
-
-                        <div className="Team">
-                            <h3>{x.EquipeVisiteur}</h3>
-                            {ReverseCoting(x.cote)}
                         
-                            Visitor Victory: 
-                                {HandleMMRChange('victory', ReverseCoting(x.cote))}
-                                    <br/>
-                            Defeat visitor: 
-                            <p> {HandleMMRChange('defeat', ReverseCoting(x.cote))} </p>
+                        <div className="Team">
+                            <div className="teamHead">
+                                <h3>{x.EquipeDomicile}</h3>
+                                {x.cote}
+                            </div>
 
-                        </div>
-                    </div>
+                            <div className="MMR">
+                                <Button>
+                                    Bet for {x.EquipeDomicile}
+                                </Button>
+                                <div className="points">
 
-                    <div className="effectOnMMR">
-                       
-
-                        <div id="MMRVisitor">
+                                    <p>+ {HandleMMRChange('victory', x.cote)}</p>
+                                    <p>- {HandleMMRChange('defeat', x.cote)}</p>
+                                </div>
                                 
 
+                                
+                                </div>
+                            
                         </div>
-                    
+                        
+                        
+
                     </div>
 
+                   
                 </Card>
                 
                 )}

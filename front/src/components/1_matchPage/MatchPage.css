@@ -8,9 +8,23 @@
     width:80%;
 
 }
-
+.MatchCards h3{
+    width:100%;
+    height:100%; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
 #vs{display: flex;
     align-items: center;}
+
+.cardBody{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap !important;
+}
+
+
 
 .Team{
     display:flex;
@@ -19,16 +33,14 @@
     flex-flow: column;
     width: 40%;
 }
-.MatchCards h3{
-    width:100%;
-    height:100%; 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-}
 
-.cardBody{
+.teamHead{
     display: flex;
-    justify-content: space-around;
-    flex-flow: wrap !important;
+    margin:20px;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
 }
+.MMR >*{
+    margin:20px;
+    text-align: center;}
