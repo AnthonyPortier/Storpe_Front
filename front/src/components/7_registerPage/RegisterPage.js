@@ -17,7 +17,7 @@ const RegisterPage = () => {
     // Password and verification
     const [password,setPassword] = useState(null)
     const [confirmePassword, setConfirmePassword]=useState(null)
-    const [passwordUser, setPasswordUser] = useState(null)
+
     const [errorPassword, setErrorPassword] = useState(null)
 
     
@@ -64,11 +64,12 @@ const RegisterPage = () => {
     const handleClick = (e) =>{
         e.preventDefault()
         if (password === confirmePassword && password.length >= 6 ) {
+
         axios.post('http://localhost:3001/user/profile',{
             firstname: `${firstname}`,
             lastname: `${lastname}`,
             email: `${email}`,
-            password: `${passwordUser}`,
+            password: `${password}`,
             daily_bet: 0,
             pseudo: `${pseudo}`
 
