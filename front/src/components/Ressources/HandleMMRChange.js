@@ -49,7 +49,7 @@ import React from 'react';
         else{
             attributedPoints="ERREUR"
         }
-        return(attributedPoints
+        return(Math.round(attributedPoints)
         )
     }
     

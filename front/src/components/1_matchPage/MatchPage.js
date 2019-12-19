@@ -23,7 +23,6 @@ const MatchPage = () => {
             </Slider> 
         </div>
 
-
     );
 }
  
