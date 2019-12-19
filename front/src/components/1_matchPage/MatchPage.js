@@ -1,8 +1,8 @@
 import React from 'react';
-import Slider from "react-slick";
-import Slide1 from './Slide1.jsx'
-import Slide2 from './Slide2.jsx'
-import '../1_matchPage/MatchPage.css'
+import Slider from 'react-slick'
+import Slide1 from './Slide1'
+import Slide2 from './Slide2'
+import './MatchPage.scss'
 
 
 const MatchPage = () => {
