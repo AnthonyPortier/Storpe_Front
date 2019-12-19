@@ -73,12 +73,13 @@ const Slide1 = () => {
                 </Card>
             )}
                 <div className="sideBarRight">
+                     <div className="counter-match"> {Counter}/10 </div>
+
                     <button className="button-validation"type='submit'>
                         VALIDER
                     </button>
                 
-                    <div className="counter-match"> {Counter}/10 </div>
-
+                   
                 </div>
                 
         </div>   
