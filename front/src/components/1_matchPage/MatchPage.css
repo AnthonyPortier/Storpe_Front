@@ -39,8 +39,6 @@ h2.h2-title {
     flex-flow: wrap !important;
 }
 
-
-
 .Team{
     display:flex;
     justify-content: center;
@@ -59,3 +57,17 @@ h2.h2-title {
 .MMR >*{
     margin:20px;
     text-align: center;}
+
+.slick-next:before, .slick-prev:before{
+    color:#FFFF;
+    font-size: 50px;
+}
+
+.slick-next, .slick-prev {
+    width: 120px;
+
+}
+
+.slick-prev, .slick-prev:before {
+z-index: 5;
+}
