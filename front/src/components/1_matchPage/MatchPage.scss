@@ -19,11 +19,19 @@ h1.h1-title {
     color: white;
 }
 
-h2.h2-title {
+h2.h2-title-basket {
     text-align: center;
     padding: 1rem;
     background-color: white;
-    border-bottom: yellow 20px solid;
+    border-bottom: rgb(182, 25, 38) 20px solid;
+    width: 100%;
+}
+
+h2.h2-title-foot {
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    border-bottom: rgb(175, 195, 85) 20px solid;
     width: 100%;
 }
 
@@ -33,6 +41,7 @@ h2.h2-title {
     @include flex(column, center, stretch);
     
     width:80%;
+    margin: auto;
 
     h3{
         width:100%;
@@ -40,6 +49,7 @@ h2.h2-title {
         display: flex; 
         align-items: center;
         justify-content: center;
+        
     }
 
 
@@ -53,8 +63,6 @@ h2.h2-title {
     justify-content: space-around;
     flex-flow: wrap !important;
 }
-
-
 
 .Team{
     display:flex;
@@ -73,4 +81,43 @@ h2.h2-title {
 }
 .MMR >*{
     margin:20px;
-    text-align: center;}
+    text-align: center;
+}
+
+.button-validation{
+    font-family: Hijo;
+    font-size: 3rem;
+    width: 20%;
+    height: 50px;
+    background-color: lightgreen;
+    color : white;
+    margin: 10px;
+}
+
+.sideBarRight {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+
+}
+
+.counter-match{
+    font-size: 2rem;
+}
+
+.slick-prev:before {
+    font-size: 40px;
+    line-height: 1;
+    opacity: .75;
+    color: #fff;
+}
+
+.slick-next:before {
+    font-size: 40px;
+    line-height: 1;
+    opacity: .75;
+    color: #fff;
+}

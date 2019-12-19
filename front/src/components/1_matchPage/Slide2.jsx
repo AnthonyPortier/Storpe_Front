@@ -28,7 +28,7 @@ const Slide2 = () => {
     return (
 
     <>  
-    <h2 className='h2-title'>BASKETBALL</h2>
+    <h2 className='h2-title-basket'>BASKETBALL</h2>
         <div className="MatchCards">
             {Object.values(dataBaseMatch).map(x=>
                 <Card>
@@ -73,11 +73,11 @@ const Slide2 = () => {
                 </Card>
             )}
                 <div className="sideBarRight">
-                    <button type='submit'>
+                    <button className="button-validation" type='submit'>
                         Valider
                     </button>
                 
-                    <p> {Counter}/10 </p>
+                    <div className="counter-match" > {Counter}/10 </div>
 
                 </div>
                 
