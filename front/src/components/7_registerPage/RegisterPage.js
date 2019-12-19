@@ -9,7 +9,6 @@ const responseFacebook = (response) => {
 
 const RegisterPage = () => {
 
-
     return (
         <div className="register-page-main-div">
             <h1 className="h1-titre">STORPE</h1>

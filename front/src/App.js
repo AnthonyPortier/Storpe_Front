@@ -14,7 +14,7 @@ function App() {
         <div className="app">
 
 
-        <MatchPage/>
+        <Router/>
         </div>
     </ContextHook.Provider>
   );

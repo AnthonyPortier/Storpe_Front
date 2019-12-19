@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Link} from 'react-router-dom'
 import './LandingPage.css'
 
 const LandingPage = (props) => {
@@ -21,7 +22,7 @@ const LandingPage = (props) => {
         </Col>
       </FormGroup>
       <FormGroup>
-          <Button className="LandingPage-btn">Se connecter</Button>
+      <Link to ='/homepage'><Button className="LandingPage-btn">Se connecter</Button></Link>
       </FormGroup>
     </Form>
     </div>

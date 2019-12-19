@@ -1,4 +1,19 @@
-*{border: solid 1px red}
+div.MatchPage-full {
+    background-color: #53a7f0;
+}
+
+h1.h1-title {
+    text-align: center;
+    padding: 1rem;
+}
+
+h2.h2-title {
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    border-bottom: yellow 20px solid;
+}
+
 
 .MatchCards{
     display: flex;
