@@ -20,9 +20,7 @@ const MatchPage = () => {
 
     function fullfillDatabase (pronostic, action){
         
-        const id = action.id
-        
-
+        if (Object.keys(pronostic).length<10){
         return(
             {...pronostic, 
                 [action.id]:
@@ -31,7 +29,11 @@ const MatchPage = () => {
                     "PlayerBet" : action.bet,
                     "oddsAtClickTime": action.oddsAtClickTime }
             } 
-        )
+        )}
+        else{
+            alert( 'Vous avez déjà atteint le seuil de 10 paris')
+            return(pronostic)
+        }
     }
 
     const dataBaseMatch = [
@@ -130,7 +132,176 @@ const MatchPage = () => {
                     "odd": "2.10"
                 }
             ]
-        }  ]
+        },
+        {   "id": 5,
+        "homeTeam": {
+            "teamName": "Lille",
+            "teamLogo": "https://media.api-football.com/teams/79.png"
+        },
+        "awayTeam": {
+            "teamName": "Montpellier",
+            "teamLogo": "https://media.api-football.com/teams/71.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "1.80"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.50"
+            },
+            {
+                "value": "Away",
+                "odd": "5.00"
+            }
+        ]
+    },
+    {"id": 6,
+        "homeTeam": {
+            "teamName": "Metz",
+            "teamLogo": "https://media.api-football.com/teams/112.png"
+        },
+        "awayTeam": {
+            "teamName": "Marseille",
+            "teamLogo": "https://media.api-football.com/teams/112.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "4.00"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.60"
+            },
+            {
+                "value": "Away",
+                "odd": "1.90"
+            }
+        ]
+    },
+    {"id": 7,
+        "homeTeam": {
+            "teamName": "Angers",
+            "teamLogo": "https://media.api-football.com/teams/77.png"
+        },
+        "awayTeam": {
+            "teamName": "Monaco",
+            "teamLogo": "https://media.api-football.com/teams/77.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "3.10"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.50"
+            },
+            {
+                "value": "Away",
+                "odd": "2.25"
+            }
+        ]
+    },
+    {"id": 8,
+        "homeTeam": {
+            "teamName": "Nimes",
+            "teamLogo": "https://media.api-football.com/teams/92.png"
+        },
+        "awayTeam": {
+            "teamName": "Nantes",
+            "teamLogo": "https://media.api-football.com/teams/92.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "3.90"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.20"
+            },
+            {
+                "value": "Away",
+                "odd": "2.10"
+            }
+        ]
+    },  
+
+    {"id": 9,
+        "homeTeam": {
+            "teamName": "Metz",
+            "teamLogo": "https://media.api-football.com/teams/112.png"
+        },
+        "awayTeam": {
+            "teamName": "Marseille",
+            "teamLogo": "https://media.api-football.com/teams/112.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "4.00"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.60"
+            },
+            {
+                "value": "Away",
+                "odd": "1.90"
+            }
+        ]
+    },
+    {"id": 10,
+        "homeTeam": {
+            "teamName": "Angers",
+            "teamLogo": "https://media.api-football.com/teams/77.png"
+        },
+        "awayTeam": {
+            "teamName": "Monaco",
+            "teamLogo": "https://media.api-football.com/teams/77.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "3.10"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.50"
+            },
+            {
+                "value": "Away",
+                "odd": "2.25"
+            }
+        ]
+    },
+    {"id": 11,
+        "homeTeam": {
+            "teamName": "Nimes",
+            "teamLogo": "https://media.api-football.com/teams/92.png"
+        },
+        "awayTeam": {
+            "teamName": "Nantes",
+            "teamLogo": "https://media.api-football.com/teams/92.png"
+        },
+        "odds": [
+            {
+                "value": "Home",
+                "odd": "3.90"
+            },
+            {
+                "value": "Draw",
+                "odd": "3.20"
+            },
+            {
+                "value": "Away",
+                "odd": "2.10"
+            }
+        ]
+    }, ]
         
     
     /* 
@@ -237,8 +408,7 @@ const MatchPage = () => {
                 </Card>
             )}
                 <div className="sideBarRight">
-
-                <p> {Counter}/10 </p>
+                <p> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </p>
 
                     <form onSubmit={(e)=>sendPronostic(e)}>
                         <button type="submit">Valider</button>
