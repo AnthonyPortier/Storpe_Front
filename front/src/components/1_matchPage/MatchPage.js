@@ -19,6 +19,20 @@ const MatchPage = () => {
         return("")
     }
 
+    /* 
+    const getMatches = async() => {
+        await axios.get(urlDatabase)
+        .then(res => setMatch(res.data))
+        .catch((err) => console.log(err))
+    }
+
+    useEffect(() => {
+        getMatches()
+    }, []) */
+
+
+
+
     const [pronostic, dispatchPronostic] = useReducer(fullfillDatabase, {})
 
     function fullfillDatabase (pronostic, action){
@@ -307,16 +321,8 @@ const MatchPage = () => {
     }, ]
         
     
-    /* 
-        useEffect(() => {
-
-            const APIfetch = async () => {
-                const result = await Axios(urlDatabase);
-                dataBaseMatch = result
-            } 
-            APIfetch()
-            },[]); */
-
+    
+        
     const sendPronostic = (e) =>{
         e.preventDefault()
         axios.post('http://localhost:5000/users', pronostic)
