@@ -18,7 +18,7 @@ const Login = () => {
 
   const loginUser = (e) => {
       e.preventDefault()
-      axios.post('http://localhost:5000/LoginRoute/login', detailLogin)
+      axios.post('https://stor4.herokuapp.com/LoginRoute/login', detailLogin)
           .then(res => {
               localStorage.setItem('usertoken', res.data)
               return res.data

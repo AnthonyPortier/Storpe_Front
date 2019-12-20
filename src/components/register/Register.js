@@ -67,7 +67,7 @@ const Register = () => {
         e.preventDefault()
         if (password === confirmePassword && password.length >= 6 ) {
 
-        axios.post('http://localhost:5000/LoginRoute/register',{
+        axios.post('https://stor4.herokuapp.com/LoginRoute/register',{
             firstname: `${firstname}`,
             lastname: `${lastname}`,
             email: `${email}`,
