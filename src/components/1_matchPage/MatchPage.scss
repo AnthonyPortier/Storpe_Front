@@ -1,3 +1,7 @@
+*{
+    border : 1px red solid;
+}
+
 @mixin flex($flow, $justC, $AlignI) {
     display:flex;
     flex-flow:$flow;
