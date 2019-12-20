@@ -14,9 +14,12 @@ const MatchPage = () => {
         return(
         Math.round(number*100)/100
         )}
-    
+    // get all Matches
+    const [Match, setMatch = useState([])
 
     const [pronostic, dispatchPronostic] = useReducer(fullfillDatabase, {})
+
+    const
 
     function fullfillDatabase (pronostic, action){
         
@@ -420,7 +423,7 @@ const MatchPage = () => {
 
 //     </>
 //     );
-}
+// }
  
 
 export default MatchPage

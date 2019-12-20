@@ -7,6 +7,14 @@ import '../1_matchPage/MatchPage.scss'
 
 const MatchPage = () => {
 
+    // get all Matches
+    const [Match, setMatch = useState([])
+    const getMatch = () => {
+        axios.get('http://localhost:5000/match')
+        .then(res => setMatch(res.data))
+        .catch((err) => console.log(err))
+    }
+
     const [Counter, setCounter] = useState(0)
     const urlDatabase = "xxx"
 
@@ -15,7 +23,6 @@ const MatchPage = () => {
         Math.round(number*100)/100
         )}
     
-
     const [pronostic, dispatchPronostic] = useReducer(fullfillDatabase, {})
 
     function fullfillDatabase (pronostic, action){
@@ -420,7 +427,7 @@ const MatchPage = () => {
 
 //     </>
 //     );
-}
+// }
  
 
 export default MatchPage

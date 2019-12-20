@@ -1,5 +1,5 @@
 import React from 'react'
-import Match from './0_matchPage/Match'
+import Match from './01_matchPage/match'
 import { Switch, Route} from 'react-router-dom'
 import LandingPage from './2_landingPage/LandingPage'
 import MatchPage from './1_matchPage/MatchPage'

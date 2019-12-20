@@ -1,5 +1,4 @@
 import React from 'react'
-import Match from './0_matchPage/Match'
 import { Switch, Route} from 'react-router-dom'
 import LandingPage from './2_landingPage/LandingPage'
 import MatchPage from './1_matchPage/MatchPage'
@@ -17,8 +16,7 @@ const Router = () => {
                 <Route exact path ='/editProfile' component={EditProfile}/>*/}
                 <Route exact path ='/congratulations' component={CongratulationsPage}/>
                 <Route exact path='/login' component={LandingPage}/>
-                <Route exact path ='/' component={RegisterPage}/>
-                <Route exact path ='/match' component={Match}/>           
+                <Route exact path ='/' component={RegisterPage}/>          
             </Switch>
         </div>
     )
