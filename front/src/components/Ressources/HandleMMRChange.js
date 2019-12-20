@@ -12,12 +12,6 @@ import React from 'react';
 
         }
 
-        else if (result === 'draw'){
-
-
-
-        }
-
         else if (result === 'defeat'){
             switch (cote) {
                 case cote>2.60:
@@ -60,7 +54,7 @@ import React from 'react';
         }
 
         else{
-            "ERREUR"
+            return("ERREUR")
         }
 
         return(attributedPoints)
