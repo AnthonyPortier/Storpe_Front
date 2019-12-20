@@ -14,11 +14,8 @@ const Users = () => {
 
     return(
         <div>
-            <p>{user.pseudo}</p>p>
-            <p>{user.score}</p>
-            <p>{user.daily_bet}</p>
+
         </div>
     )
 }
-
 export default Users
