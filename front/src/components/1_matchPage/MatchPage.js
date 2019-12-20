@@ -15,6 +15,9 @@ const MatchPage = () => {
         Math.round(number*100)/100
         )}
     
+    const switchToGreen = ()=>{
+        return("")
+    }
 
     const [pronostic, dispatchPronostic] = useReducer(fullfillDatabase, {})
 
@@ -344,13 +347,17 @@ const MatchPage = () => {
                                 
                                                             </div>
                             <div className="MMR">
-                            <Button onClick={()=>dispatchPronostic({
+                            <Button 
+                                value={x.awayTeam.teamName}
+                                onClick={()=>dispatchPronostic({
                                     id: x.id,
                                     HomeTeam : x.homeTeam.teamName,
                                     AwayTeam : x.awayTeam.teamName,
                                     bet: x.homeTeam.teamName,
                                     oddsAtClickTime: x.odds[2].odd 
-                                    })}>
+                                    })}
+                                    
+                                    >
 
                                     Bet for {x.awayTeam.teamName}
                                     
@@ -374,7 +381,20 @@ const MatchPage = () => {
                         </div>
                         
                         <div id="vs">
-                            <h2 >VS</h2>    
+                            <h2 >VS</h2>
+                            <Button value={x.awayTeam.teamName}
+                                    onClick={()=>dispatchPronostic({
+                                    id: x.id,
+                                    HomeTeam : x.homeTeam.teamName,
+                                    AwayTeam : x.awayTeam.teamName,
+                                    bet: 'draw',
+                                    oddsAtClickTime: x.odds[1].odd 
+                                    })}>
+
+                                    Match nul
+                                    
+                                </Button>
+                                    
                         </div>
                         
                         <div className="Team">
@@ -421,6 +441,6 @@ const MatchPage = () => {
     </>
     );
 }
- 
+
 
 export default MatchPage
