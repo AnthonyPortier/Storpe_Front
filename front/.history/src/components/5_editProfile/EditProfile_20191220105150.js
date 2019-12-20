@@ -5,7 +5,7 @@ const EditProfile = () => {
 
     // edit profile user by id
     const [profile , setProfile] = useState([])
-    
+
     const updateProfile = () => {
         axios.put('/user/profile/:id')
         .then(res => setProfile(res.data))
@@ -14,13 +14,9 @@ const EditProfile = () => {
 
     return(
             <div>
-                <form onSubmit={updateProfile}>
-                    <input></input>
-                    <p>{user.pseudo}</p>p>
-                    <p>{user.score}</p>
-                    <p>{user.daily_bet}</p>
-                    <button>Edit</button>
-                </form>
+                <p>{user.pseudo}</p>p>
+                <p>{user.score}</p>
+                <p>{user.daily_bet}</p>
             </div>
     )
 }
