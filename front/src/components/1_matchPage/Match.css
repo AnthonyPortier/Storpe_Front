@@ -1,0 +1,21 @@
+.div {
+    background-color: #53a7f0;
+}
+
+.cardBody {
+    background-color: #53a7f0;
+}
+
+.h2-title {
+    text-align: center;
+}
+
+.Team {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+

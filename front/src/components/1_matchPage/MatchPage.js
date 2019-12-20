@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, useReducer } from 'react'
 import {Card, Button} from 'reactstrap'
 import axios from 'axios'
 import HandleMMRChange from '../Ressources/HandleMMRChange'
-import '../1_matchPage/MatchPage.scss'
+import '../1_matchPage/Match.css'
 
 
 const MatchPage = () => {
@@ -324,7 +324,7 @@ const MatchPage = () => {
     
     return (
 
-    <>  
+    <div className="div">  
     {console.log(pronostic)}
     <h2 className='h2-title'>FOOTBALL</h2>
         <div className="MatchCards">
@@ -418,7 +418,7 @@ const MatchPage = () => {
                 
         </div>   
 
-    </>
+    </div>
     );
 }
  
