@@ -98,23 +98,15 @@ h2.h2-title-basket {
 .button-validation{
     font-family: Hijo;
     font-size: 3rem;
-    width: 100%;
+    width: 30%;
     height: 50px;
     background-color: #6DC833;
     color : white;
     margin: 10px;
+    text-align: center;
     
 }
 
-.sideBarRight {
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-
-}
 
 .counter-match{
     margin-top: 5px;
@@ -150,4 +142,8 @@ h2.h2-title-basket {
 .MatchPage-full.card {
     margin: 10px auto;
 
+}
+#draw{
+    background-color: #f3FF33;
+    color: black;
 }

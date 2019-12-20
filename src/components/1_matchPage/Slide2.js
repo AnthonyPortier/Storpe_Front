@@ -337,6 +337,8 @@ const Slide1 = () => {
     {console.log(pronostic)}
     <h2 className='h2-title-foot'>FOOTBALL</h2>
         <div className="MatchCards">
+            <Button>Classement</Button>
+
             {
             
             
@@ -388,7 +390,7 @@ const Slide1 = () => {
                         
                         <div id="vs">
                             <h2 >VS</h2>
-                            <Button value={x.awayTeam.teamName}
+                            <Button id="draw" value={x.awayTeam.teamName}
                                     onClick={()=>dispatchPronostic({
                                     id: x.id,
                                     HomeTeam : x.homeTeam.teamName,
@@ -434,7 +436,7 @@ const Slide1 = () => {
                 </Card>
             )}
                 <div className="sideBarRight">
-                <div className="button-match-count"> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </div>
+                <div className="match-count"> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </div>
 
                     <form onSubmit={(e)=>sendPronostic(e)}>
                         <button className="button-validation" type="submit">Valider</button>
