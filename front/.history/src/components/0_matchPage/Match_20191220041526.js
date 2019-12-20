@@ -3,11 +3,9 @@ import axios from 'axios'
 import { createPortal } from 'react-dom'
 
 const Matches = () => {
-    //hooks to get all matches & match by id & sport
+    //hooks to get all matches & match by id
     const [match, setMatch] = useState([])
     const [idMatch, setIdMatch] = useState([])
-    const [football, setFootball] = useState([])
-    const [basketball, setBasketball] = useState([])
 
     //get all matches 
     const getMatches = () => {
@@ -27,37 +25,34 @@ const Matches = () => {
         .catch((err) => console.log(err))
     }
 
-    // get football matches
-    const getFootball = () => {
-          axios.get('http://localhost:5000/match/football')
-          .then(res => setFootball(res.data))
-          .catch((err) => console.log(err))
-      }
-
-    const getBasketball = () => {
-        axios.get('http://localhost:5000/match/basketball')
-    }
+      const sport = match.filter(match => {
+          return match.sport = football
+      } );
 
     return(
         <div>
             <div>
-                <h1>Les matchs du jour</h1>
+            <h1>Les matchs du jour</h1>
             </div>
             <div>
-                <h2>Sport</h2>
+                <h2>{match.sport}</h2>
             </div>
             <div>
-                {match.map( () => {
-                    <div>
-                        <p>{match.homeTeam}</p>
-                        <p>{match.logo_homeTeam}</p>
-                        <p>{match.awayTeam}</p>
-                        <p>{match.logo_awayTeam}</p>
-                        <p>{match.odd_home}</p>
-                        <p>{match.odd_draw}</p>
-                        <p>{match.resultat_match}</p>
+                {if (match.sport != ${sport}){
+                    return (
+                        <div>
+                        <p>{x.homeTeam}</p>
+                        <p>{x.logo_homeTeam}</p>
+                        <p>{x.awayTeam}</p>
+                        <p>{x.logo_awayTeam}</p>
+                        <p>{x.odd_home}</p>
+                        <p>{x.odd_draw}</p>
+                        <p>{x.resultat_match}</p>
                     </div>
-                })}
+                    )
+                }
+                    
+                ))}
             </div>
             <div>
                 <p>{idMatch.homeTeam}</p>
@@ -70,6 +65,7 @@ const Matches = () => {
             </div>
         </div>
     )
+
 }
 
 export default Matches

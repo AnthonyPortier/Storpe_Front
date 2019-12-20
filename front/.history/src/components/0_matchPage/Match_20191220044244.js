@@ -41,13 +41,13 @@ const Matches = () => {
     return(
         <div>
             <div>
-                <h1>Les matchs du jour</h1>
+            <h1>Les matchs du jour</h1>
             </div>
             <div>
                 <h2>Sport</h2>
             </div>
             <div>
-                {match.map( () => {
+                {match.map( (e) => {
                     <div>
                         <p>{match.homeTeam}</p>
                         <p>{match.logo_homeTeam}</p>
@@ -70,6 +70,7 @@ const Matches = () => {
             </div>
         </div>
     )
+
 }
 
 export default Matches

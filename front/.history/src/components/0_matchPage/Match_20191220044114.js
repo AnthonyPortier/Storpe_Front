@@ -30,7 +30,7 @@ const Matches = () => {
     // get football matches
     const getFootball = () => {
           axios.get('http://localhost:5000/match/football')
-          .then(res => setFootball(res.data))
+          .then(res => setFootBall(res.data))
           .catch((err) => console.log(err))
       }
 
@@ -41,13 +41,13 @@ const Matches = () => {
     return(
         <div>
             <div>
-                <h1>Les matchs du jour</h1>
+            <h1>Les matchs du jour</h1>
             </div>
             <div>
                 <h2>Sport</h2>
             </div>
             <div>
-                {match.map( () => {
+                {match.map( e => {
                     <div>
                         <p>{match.homeTeam}</p>
                         <p>{match.logo_homeTeam}</p>
@@ -58,6 +58,8 @@ const Matches = () => {
                         <p>{match.resultat_match}</p>
                     </div>
                 })}
+                    
+                ))}
             </div>
             <div>
                 <p>{idMatch.homeTeam}</p>
@@ -70,6 +72,7 @@ const Matches = () => {
             </div>
         </div>
     )
+
 }
 
 export default Matches

@@ -41,7 +41,7 @@ const Matches = () => {
     return(
         <div>
             <div>
-                <h1>Les matchs du jour</h1>
+            <h1>Les matchs du jour</h1>
             </div>
             <div>
                 <h2>Sport</h2>
@@ -70,6 +70,7 @@ const Matches = () => {
             </div>
         </div>
     )
+
 }
 
 export default Matches
