@@ -335,14 +335,14 @@ const Slide1 = () => {
 
     <>  
     {console.log(pronostic)}
-    <h2 className='h2-title'>FOOTBALL</h2>
+    <h2 className='h2-title-foot'>FOOTBALL</h2>
         <div className="MatchCards">
             {
             
             
             dataBaseMatch.map(x=>
                 
-                <Card key={x.id}>
+                <Card key={x.id} className="MatchPage-full">
                     <div className="cardBody">
                         <div className="Team">
                             <img alt="" src={x.homeTeam.teamLogo}/>
@@ -434,10 +434,10 @@ const Slide1 = () => {
                 </Card>
             )}
                 <div className="sideBarRight">
-                <p> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </p>
+                <div className="button-match-count"> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </div>
 
                     <form onSubmit={(e)=>sendPronostic(e)}>
-                        <button type="submit">Valider</button>
+                        <button className="button-validation" type="submit">Valider</button>
                     </form>
 
                 </div>
