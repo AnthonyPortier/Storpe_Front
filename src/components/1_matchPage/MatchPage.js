@@ -7,13 +7,6 @@ import './MatchPage.scss'
 
 const MatchPage = () => {
 
-    /* settings du slider */
-    const settings = {
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
-
     return (  
         <div className='MatchPage-full'>
             <h1 className='h1-title'>Les matchs du jour</h1>

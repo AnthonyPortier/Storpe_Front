@@ -121,12 +121,16 @@ h2.h2-title-basket {
 
 }
 
+.slick-prev:before, .slick-next:before, .slick-next, .slick-prev {
+    position: sticky;
+    
+}
+
 .slick-next:before {
     font-size: 40px;
     line-height: 1;
     opacity: .75;
     color: #fff;
-    
 }
 .match-count{
     text-align: center;
@@ -146,4 +150,20 @@ h2.h2-title-basket {
 #draw{
     background-color: #f3FF33;
     color: black;
+}
+
+.slick-next{
+
+    position:fixed;
+    top: calc(50vh - 10px);
+    right: 3vw
+}
+
+
+
+.slick-prev{
+
+    position:fixed;
+    top: calc(50vh - 10px);
+    left: 3vw
 }
