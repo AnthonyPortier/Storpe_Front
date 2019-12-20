@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useReducer } from 'react'
 import {Card, Button} from 'reactstrap'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import HandleMMRChange from '../Ressources/HandleMMRChange'
 import '../1_matchPage/MatchPage.scss'
@@ -337,7 +338,7 @@ const Slide1 = () => {
     {console.log(pronostic)}
     <h2 className='h2-title-foot'>FOOTBALL</h2>
         <div className="MatchCards">
-            <Button id="btn-classement">Classement</Button>
+        <Link to='/classement'><Button id="btn-classement">Classement</Button></Link>
 
             {
             
