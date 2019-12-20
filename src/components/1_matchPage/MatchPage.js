@@ -16,7 +16,7 @@ const MatchPage = () => {
 
     return (  
         <div className='MatchPage-full'>
-            <h1 className='h1-title'>Les matchs du jours</h1>
+            <h1 className='h1-title'>Les matchs du jour</h1>
             <Slider style={{width: '90%', margin : 'auto'}} >
                 <Slide1/>
                 <Slide2/>
