@@ -1,14 +1,16 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { FormGroup, Label, Form, Button, Input } from 'reactstrap';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import './RegisterPage.css'
+import { useHistory} from 'react-router-dom'
 
-const responseFacebook = (response) => {
-    console.log(response);
-}
 
-const RegisterPage = () => {
+const Register = () => {
+
+
+    let history = useHistory()
+
     const [lastname,setLastname] = useState(null)
     const [firstname,setFirstname] = useState(null)
     const [email,setEmail] = useState(null)    
@@ -65,7 +67,7 @@ const RegisterPage = () => {
         e.preventDefault()
         if (password === confirmePassword && password.length >= 6 ) {
 
-        axios.post('http://localhost:3001/user/profile',{
+        axios.post('http://localhost:5000/LoginRoute/register',{
             firstname: `${firstname}`,
             lastname: `${lastname}`,
             email: `${email}`,
@@ -77,8 +79,12 @@ const RegisterPage = () => {
         .then(function(response){
             console.log(response)
         })
+        .then(res => {
+            history.push('/Login')
+        })
         .catch(function(error){
             console.log(error)
+
         })}else{
             setErrorPassword('les mots de passe ne correspondent pas, veuillez réessayer')
         }
@@ -169,4 +175,4 @@ const RegisterPage = () => {
     );
 }
 
-export default RegisterPage;
+export default Register;
