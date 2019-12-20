@@ -337,7 +337,7 @@ const Slide1 = () => {
     {console.log(pronostic)}
     <h2 className='h2-title-foot'>FOOTBALL</h2>
         <div className="MatchCards">
-            <Button>Classement</Button>
+            <Button id="btn-classement">Classement</Button>
             {
             
             
@@ -437,7 +437,7 @@ const Slide1 = () => {
                 <div className="sideBarRight">
                 <div className="match-count"> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </div>
 
-                    <form onSubmit={(e)=>sendPronostic(e)}>
+                    <form className="div-valider"onSubmit={(e)=>sendPronostic(e)}>
                         <button className="button-validation" type="submit">Valider</button>
                     </form>
 
