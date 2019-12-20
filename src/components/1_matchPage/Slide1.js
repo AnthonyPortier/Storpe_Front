@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useReducer } from 'react'
 import {Card, Button} from 'reactstrap'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import HandleMMRChange from '../Ressources/HandleMMRChange'
 import '../1_matchPage/MatchPage.scss'
@@ -337,7 +338,7 @@ const Slide1 = () => {
     {console.log(pronostic)}
     <h2 className='h2-title-foot'>FOOTBALL</h2>
         <div className="MatchCards">
-            <Button>Classement</Button>
+            <Link to='/classement'><Button id="btn-classement">Classement</Button></Link>
             {
             
             
@@ -437,7 +438,7 @@ const Slide1 = () => {
                 <div className="sideBarRight">
                 <div className="match-count"> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </div>
 
-                    <form onSubmit={(e)=>sendPronostic(e)}>
+                    <form className="div-valider"onSubmit={(e)=>sendPronostic(e)}>
                         <button className="button-validation" type="submit">Valider</button>
                     </form>
 
