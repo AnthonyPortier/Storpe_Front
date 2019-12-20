@@ -44,7 +44,7 @@ const Login = () => {
       <FormGroup row>
         <Label for="examplePassword" sm={2}>Password</Label>
         <Col sm={10}>
-          <Input type="password" name="password" value={password} required type='text' id="examplePassword" placeholder="Mot de passe" onChange={(e) => setPassword(e.target.value)} />
+          <Input type="password" name="password" value={password} required id="examplePassword" placeholder="Mot de passe" onChange={(e) => setPassword(e.target.value)} />
         </Col>
       </FormGroup>
       <FormGroup>
