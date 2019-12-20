@@ -1,0 +1,22 @@
+div.Classement-full {
+    text-align: center;
+    margin: auto;
+    background-color: #53A8F0;
+    color: white;
+    font-size: 3rem;
+}
+
+button.Classement-button {
+    margin:2rem auto;
+    width: 30%;
+    background-color: white;
+    color: #53a7f0;
+    font-weight: bold;
+}
+
+h1.Classement-title {
+    font-size: 8rem;
+    font-weight: bold;
+    padding-bottom: 5rem;
+
+}

@@ -3,7 +3,7 @@ import { Switch, Route} from 'react-router-dom'
 import Login from './login /Login'
 import MatchPage from './1_matchPage/MatchPage'
 import Register from './register/Register'
-import Classement from './Classement'
+import Classement from './classement/Classement.jsx'
 
 
 const Router = () => {
