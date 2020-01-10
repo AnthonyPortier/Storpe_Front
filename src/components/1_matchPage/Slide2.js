@@ -336,7 +336,7 @@ const Slide1 = () => {
 
     <>  
     {console.log(pronostic)}
-    <h2 className='h2-title-foot'>FOOTBALL</h2>
+    <h2 className='h2-title-basket'>BASKETBALL</h2>
         <div className="MatchCards">
         <Link to='/classement'><Button id="btn-classement">Classement</Button></Link>
 
