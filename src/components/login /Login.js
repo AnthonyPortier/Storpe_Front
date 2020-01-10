@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Col, Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import './login.css'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import axios from 'axios'
+
+
 
 const Login = () => {
 
@@ -10,21 +12,22 @@ const Login = () => {
   const [password, setPassword] = useState('')
 
   let history = useHistory()
-
   const detailLogin = {
       email: email,
       password: password
   }
-
+/* const loginUrl = 'https://stor4.herokuapp.com/LoginRoute/login'
+ */
+  const testLoginUrl = 'http://192.168.1.180:4020/LoginRoute/login'
   const loginUser = (e) => {
       e.preventDefault()
-      axios.post('https://stor4.herokuapp.com/LoginRoute/login', detailLogin)
+      axios.post(testLoginUrl, detailLogin)
           .then(res => {
               localStorage.setItem('usertoken', res.data)
               return res.data
           })
           .then(res => {
-              history.push('/matchs')
+            res?history.push('/matchs'):alert('Adresse email ou mot de passe invalide ! ');
           })
           .catch(err => console.error(err))
   }
@@ -47,9 +50,18 @@ const Login = () => {
           <Input type="password" name="password" value={password} required id="examplePassword" placeholder="Mot de passe" onChange={(e) => setPassword(e.target.value)} />
         </Col>
       </FormGroup>
-      <FormGroup>
-          <Button className="LandingPage-btn">Se connecter</Button>
+      <FormGroup className="buttonList">
+                <Button className="LandingPage-btn">Se connecter</Button>
+              
+                  <Link to='/Register'><Button className="LandingPage-btn">
+                  <span>Créer un compte</span>
+                </Button>
+              </Link>
+
+
+          
       </FormGroup>
+
     </Form>
     </div>
   );

@@ -452,3 +452,210 @@ const Slide1 = () => {
 
 
 export default Slide1
+
+
+/* 
+
+
+import React, { useContext, useEffect, useState, useReducer } from 'react'
+import {Card, Button} from 'reactstrap'
+import axios from 'axios'
+import handleMMRChange from '../Ressources/HandleMMRChange'
+import '../1_matchPage/MatchPage.scss'
+
+
+const Slide1 = () => {
+    const urlDatabase = "https://storp5.herokuapp.com"
+
+//getting userid from localStorage.
+ const [dataBaseMatch, setDataBaseMatch] = useState([])
+    const [id, setId] = useState('')
+    const [info, setInfo] = useState({})
+    useEffect(() => {
+        getProfil()
+    }, [])
+    useEffect(() => {
+        getInfo()
+    }, [id])
+    const getInfo = () => {
+        axios.get(`https://synaps3.herokuapp.com/users/${id}`)
+        .then(res => console.log(res))
+        .then(res => setInfo(res.data))
+        .catch(err => console.log(err))
+    }
+    const getProfil = () => {
+        const token = localStorage.userToken
+        const decoded = jwt_decode(token)
+        setId(decoded.id)
+    }
+
+
+
+    const decimal1 = (number)=>{
+        return(
+        Math.round(number*100)/100
+        )}
+
+    
+    const getMatches = async() => {
+        await axios.get(`${urlDatabase}/match`)
+        .then(res => setDataBaseMatch(res.data))
+        .catch((err) => console.log(err))
+    }
+
+    useEffect(() => {
+        getMatches()
+    }, []) 
+
+
+    const [pronostic, dispatchPronostic] = useReducer(fullfillDatabase, {})
+
+    function fullfillDatabase (pronostic, action){
+        
+        if (Object.keys(pronostic).length<10){
+        return(
+            {...pronostic, 
+                [action.id]:
+                    { "HomeTeam" : action.HomeTeam,
+                    "AwayTeam": action.AwayTeam,
+                    "PlayerBet" : action.bet,
+                    "oddsAtClickTime": action.oddsAtClickTime }
+            } 
+        )}
+        else{
+            alert( 'Vous avez déjà atteint le seuil de 10 paris')
+            return(pronostic)
+        }
+    }
+
+
+    
+    const sendPronostic = (e) =>{
+        e.preventDefault()
+        axios.post(`${urlDatabase}/mypronostics`, Object.values(pronostic)) // send not pronostic but only its values.
+        console.log('sending pronostic to db')
+
+    }
+
+    
+    return (
+
+    <>  
+    <h2 className='h2-title'>FOOTBALL</h2>
+        <div className="MatchCards">
+            {id} {info}
+            {
+            
+            
+            dataBaseMatch.map(x=>
+                
+                <Card key={x.id}>
+                    <div className="cardBody">
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    <div className="Team">
+                            <img alt="" src={x.logo_homeTeam}/>
+                            <div className="teamHead">
+                                <h3>{x.homeTeam}</h3>
+
+                                {x.odd_home}
+                                
+                                                            </div>
+                            <div className="MMR">
+                            <Button 
+                                value={x.odd_home}
+                                onClick={()=>dispatchPronostic({
+                                    id: x.id,
+                                    idUser: {id},
+                                    HomeTeam : x.homeTeam,
+                                    AwayTeam : x.awayTeam,
+                                    odd_defined: 1,
+                                    oddsAtClickTime: x.odd_away 
+                                    })}
+                                    
+                                    >
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    Bet for {x.homeTeam}
+                                    
+                            </Button>
+                                <div className="points">
+                                    <p>+ {handleMMRChange(
+                                            x.odd_home, true
+                                                )
+                                        }
+                                    </p>
+                                    <p>- {handleMMRChange(
+                                            x.odd_home, false)
+                                            }
+                                    </p>
+                                </div>
+                                </div>
+                        </div>
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        <div id="vs">
+                            <h2 >VS</h2>
+                            <Button value={x.awayTeam}
+                                    onClick={()=>dispatchPronostic({
+                                    id: x.id,
+                                    idUser: {id},
+                                    HomeTeam : x.homeTeam.teamName,
+                                    AwayTeam : x.awayTeam.teamName,
+                                    bet: 0,
+                                    oddsAtClickTime: x.odd_draw 
+                                    })}>
+
+                                    Match nul
+                                    
+                                </Button>
+                                    
+                        </div>
+                        
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        <div className="Team">
+                        <img alt="" src={x.logo_awayTeam}/>
+
+                            <div className="teamHead">
+                                <h3>{x.awayTeam.teamName}</h3>
+                                {decimal1(x.odds_away)}
+                            </div>
+                            <div className="MMR">
+                                <Button onClick={()=>dispatchPronostic({
+                                    id: x.id,
+                                    idUser: {id},
+                                    HomeTeam : x.homeTeam,
+                                    AwayTeam : x.awayTeam,
+                                    bet: 2,
+                                    oddsAtClickTime: x.odds_away 
+                                    })}>
+
+                                    Bet for {x.awayTeam.teamName}
+                                    
+                                </Button>
+                                <div className="points">
+
+                                    <p>+ {handleMMRChange('victory',x.odds_away
+)}</p>
+                                    <p>- {handleMMRChange('defeat', x.odds_away)}</p>
+                                </div>
+                                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        </div>
+                    </div>
+                </div>
+                </Card>
+            )}
+                <div className="sideBarRight">
+                <p> {Object.keys(pronostic).length>=10?"10":Object.keys(pronostic).length}/10 </p>
+
+                    <form onSubmit={(e)=>sendPronostic(e)}>
+                        <button type="submit">Valider</button>
+                    </form>
+
+                </div>
+                
+        </div>   
+
+    </>
+    );
+}
+
+
+export default Slide1 */

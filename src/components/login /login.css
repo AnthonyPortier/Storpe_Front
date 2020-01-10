@@ -36,3 +36,10 @@ Button.LandingPage-btn, Button.LandingPage-btn:hover {
     
 
 }
+
+.buttonList{
+    width:100%;
+    display: flex;
+    flex-flow: row;
+}
+.buttonList >*{ width:40%;}

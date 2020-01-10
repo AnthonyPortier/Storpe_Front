@@ -17,6 +17,8 @@ const MatchPage = () => {
         </div>
 
     );
+
+
 }
  
 export default MatchPage;
